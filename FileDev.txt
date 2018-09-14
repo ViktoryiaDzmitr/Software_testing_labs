@@ -1,1 +1,1 @@
-File for develop branch.
+File for develop branch only.
