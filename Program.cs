@@ -20,7 +20,9 @@ namespace Calculator
 
             //data
             string s_a, s_b;
-            double f_a = 0, f_b = 0, f_c = 0;
+            double f_a = 0;
+            double  f_b = 0;
+            double  f_c = 0;
             string operation=null;
 
 
