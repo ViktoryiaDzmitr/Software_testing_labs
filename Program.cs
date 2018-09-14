@@ -11,13 +11,15 @@ namespace Calculator
       
         static void Main(string[] args)
         {
+
+            Console.WriteLine("First commit");
             Console.WriteLine("-----------------------");
             Console.WriteLine("|Operators: +, -, *, /|");
             Console.WriteLine("| c - previous result |");
             Console.WriteLine("-----------------------");
 
             //data
-            string s_a, s_b, s_c;
+            string s_a, s_b;
             double f_a = 0, f_b = 0, f_c = 0;
             string operation=null;
 
