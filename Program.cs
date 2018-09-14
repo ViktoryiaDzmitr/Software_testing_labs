@@ -28,7 +28,9 @@ namespace Calculator
 
             for (;;)
             {
-                bool stat1 = false, stat2 = false, stat3 = false;
+                bool stat1 = false;
+                bool stat2 = false;
+                bool stat3 = false;
 
                 #region number a
 
