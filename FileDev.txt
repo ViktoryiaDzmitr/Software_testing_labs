@@ -1,1 +1,5 @@
-File for develop branch only. Master
+<<<<<<< HEAD
+File for develop branch only. Develop
+=======
+File for develop branch only. Develop
+>>>>>>> develop
