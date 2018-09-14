@@ -12,7 +12,7 @@ namespace Calculator
         static void Main(string[] args)
         {
 
-            Console.WriteLine("First commit");
+            Console.WriteLine("Second commit");
             Console.WriteLine("-----------------------");
             Console.WriteLine("|Operators: +, -, *, /|");
             Console.WriteLine("| c - previous result |");
