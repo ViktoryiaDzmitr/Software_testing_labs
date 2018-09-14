@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 File for develop branch only. Develop
-=======
-File for develop branch only. Develop
->>>>>>> develop
