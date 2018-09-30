@@ -1,0 +1,9 @@
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\bin\Debug\TraningCalc.Tests.dll
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\bin\Debug\TraningCalc.Tests.pdb
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\bin\Debug\TriangleCalc.exe
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\bin\Debug\TriangleCalc.pdb
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\obj\Debug\TraningCalc.Tests.csprojResolveAssemblyReference.cache
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\obj\Debug\TraningCalc.Tests.dll
+D:\Visual Projects\TriangleCalc\TraningCalc.Tests\obj\Debug\TraningCalc.Tests.pdb
