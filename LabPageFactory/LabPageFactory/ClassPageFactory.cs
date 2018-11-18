@@ -6,21 +6,17 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-
 namespace LabPageFactory
 {
     class ClassPageFactory
     {
-
         public ClassPageFactory()
         {
             PageFactory.InitElements(Program.browser, this);
-
         }
 
         [FindsBy(How = How.Id, Using = "from_name")]
         public IWebElement Place_from;
-
 
         [FindsBy(How = How.Id, Using = "to_name")]
         public IWebElement Place_to;
@@ -39,6 +35,5 @@ namespace LabPageFactory
 
         [FindsBy(How = How.ClassName, Using = "search_button")]
         public IWebElement SearchButton;
-
     }
 }

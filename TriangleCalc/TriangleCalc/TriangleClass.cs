@@ -8,21 +8,14 @@ namespace TriangleCalc
 {
    public class TriangleClass
     {
-
-
-
         public bool checkZero(double a, double b, double c)
         {
             if (a > 0 && b > 0 && c > 0)
             {
                 return true;
-
             }
             else return false;
         }
-
-
-
 
         public bool checkSides(double a, double b, double c)
         {

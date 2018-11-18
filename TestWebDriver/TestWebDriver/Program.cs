@@ -11,21 +11,16 @@ namespace TestWebDriver
     {
         static void Main(string[] args)
         {
-
             IWebDriver Browser;
-
-
             Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             Browser.Manage().Window.Maximize();
             Browser.Navigate().GoToUrl("http://avia.321.by/");
-
 
             IWebElement InputFrom = Browser.FindElement(By.Id("from_name"));
             InputFrom.Clear();
             InputFrom.SendKeys("Лондон");
             System.Threading.Thread.Sleep(1000);
             InputFrom.SendKeys(OpenQA.Selenium.Keys.Enter);
-
 
             IWebElement InputTo = Browser.FindElement(By.Id("to_name"));
             InputTo.SendKeys("Минск");
@@ -50,13 +45,8 @@ namespace TestWebDriver
             {
                 Console.WriteLine("Second date is earlear then first. Input Error.");
             }
-
             IWebElement SearchButton = Browser.FindElement(By.ClassName("search_button"));
             SearchButton.Click();
-
-
-
-
         }
     }
 }
