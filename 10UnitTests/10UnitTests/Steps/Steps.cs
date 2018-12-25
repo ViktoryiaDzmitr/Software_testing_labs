@@ -75,17 +75,20 @@ namespace _10UnitTests
         public void SelectPage()
         {
             _10UnitTests.MainPage selectPage = new _10UnitTests.MainPage(driver);
-            selectPage.OpenPage();
-          
+            selectPage.OpenPage();        
         }
 
         public void SelectComplexFlight()
         {
             _10UnitTests.MainPage selectPage = new _10UnitTests.MainPage(driver);
             selectPage.SelectComplexFlight();
-
         }
 
+        public void SelectOneSideFlight()
+        {
+            _10UnitTests.MainPage selectPage = new _10UnitTests.MainPage(driver);
+            selectPage.SelectOneSideFlight();
+        }
 
         public void SelectBothFlightTrip()
         {
@@ -100,26 +103,26 @@ namespace _10UnitTests
              return selectPage.SelectDatesForBothSides(); ;
         }
 
-        public bool selectPassengers()
+        public bool SelectPassengers()
         {
             _10UnitTests.MainPage mainPage = new _10UnitTests.MainPage(driver);
             mainPage.ClickPassengersMenu();
             mainPage.SelectPassengerAdult();
             for(int i=0;i<2;i++)
             mainPage.SelectPassengerBaby();
-            if (Int32.Parse(mainPage.getCountBaby()) <= Int32.Parse(mainPage.getCountAdult()))
+            if (Int32.Parse(mainPage.GetCountBaby()) <= Int32.Parse(mainPage.GetCountAdult()))
             {
                 return true;
             }
             else
             return false;
         }
-        public bool selectPassengersWithoutAdults()
+        public bool SelectPassengersWithoutAdults()
         {
             _10UnitTests.MainPage mainPage = new _10UnitTests.MainPage(driver);
             mainPage.ClickPassengersMenu();
             mainPage.SelectPassengerBaby();
-            if (Int32.Parse(mainPage.getCountBaby()) > 0 && Int32.Parse(mainPage.getCountAdult()) == 0)
+            if (Int32.Parse(mainPage.GetCountBaby()) > 0 && Int32.Parse(mainPage.GetCountAdult()) == 0)
                 return true;
             else return false;
         }
@@ -144,7 +147,7 @@ namespace _10UnitTests
             selectPage.ClickPassengersMenu();
             for(int i = 0; i< 10; i++)
             selectPage.SelectPassengerAdult();
-            if (Int32.Parse(selectPage.getCountAdult()) >= 10)
+            if (Int32.Parse(selectPage.GetCountAdult()) >= 10)
                 return true;
             else
                 return false;
@@ -154,7 +157,7 @@ namespace _10UnitTests
         {
     
             _10UnitTests.ResultPage selectPage = new _10UnitTests.ResultPage(driver);
-            string costBYN = selectPage.getCostBYN().Trim(new char[] { 'B','Y','N' });
+            string costBYN = selectPage.GetCostBYN().Trim(new char[] { 'B','Y','N' });
             selectPage.SelectUSD();
             string costUSD = selectPage.getCostUSD().Trim(new char[] { 'U', 'S', 'D' });
             double resultRate = Double.Parse(costBYN) / Double.Parse(costUSD);
@@ -169,9 +172,9 @@ namespace _10UnitTests
         {
             _10UnitTests.ResultPage selectPage = new _10UnitTests.ResultPage(driver);
 
-            string[] first = selectPage.getFirstTime().Split(new char[] { ' ' });
-            string[] second = selectPage.getSecondTime().Split(new char[] { ' ' });
-            string[] third = selectPage.getSecondTime().Split(new char[] { ' ' });
+            string[] first = selectPage.GetFirstTime().Split(new char[] { ' ' });
+            string[] second = selectPage.GetSecondTime().Split(new char[] { ' ' });
+            string[] third = selectPage.GetSecondTime().Split(new char[] { ' ' });
             double firstTimeMinutes = Double.Parse(first[0]) * 60 + Double.Parse(first[2]);
             double secondTimeMinutes = Double.Parse(second[0]) * 60 + Double.Parse(second[2]);
             double thirdTimeMinutes = Double.Parse(third[0]) * 60 + Double.Parse(third[2]);
@@ -197,42 +200,42 @@ namespace _10UnitTests
             selectPage.ClickTicket();
         }
 
-        public void insertNameAdult(string firstName, string lastName)
+        public void InsertNameAdult(string firstName, string lastName)
         {
             _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
             selectPage.InsertNameAdult(firstName, lastName);
         }
 
-        public void insertBDAdult(string bDay, string bMonth, string bYear)
+        public void InsertBDAdult(string bDay, string bMonth, string bYear)
         {
             _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
             selectPage.InsertBDAdult(bDay, bMonth, bYear);
         }
 
-        public void insertDocAdult(string num, string exDay, string exMonth, string exYear)
+        public void InsertDocAdult(string num, string exDay, string exMonth, string exYear)
         {
             _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
             selectPage.InsertDocAdult(num, exDay, exMonth, exYear);
         }
 
-        public void insertNameBaby(string firstName, string lastName)
+        public void InsertNameBaby(string firstName, string lastName)
         {
             _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
             selectPage.InsertNameBaby(firstName, lastName);
         }
 
-        public void insertBDBaby(string bDay, string bMonth, string bYear)
+        public void InsertBDBaby(string bDay, string bMonth, string bYear)
         {
             _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
             selectPage.InsertBDBaby(bDay, bMonth, bYear);
         }
 
-        public void insertDocBaby(string num, string exDay, string exMonth, string exYear)
+        public void InsertDocBaby(string num, string exDay, string exMonth, string exYear)
         {
             _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
             selectPage.InsertDocBaby(num, exDay, exMonth, exYear);
        }
-        public bool submitTicket()
+        public bool SubmitTicket()
         {
             _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
             return selectPage.Submit();
@@ -251,7 +254,8 @@ namespace _10UnitTests
         public bool ReturnBAbyAgeError()
         {
          _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
-         return   selectPage.CheckErrorMessage();
+     //       System.Threading.Thread.Sleep(10000);
+            return   selectPage.CheckErrorMessage();
         }
         public bool CheckErrorMessage()
         {

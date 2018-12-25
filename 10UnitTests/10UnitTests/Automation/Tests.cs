@@ -85,8 +85,9 @@ namespace FrameworkUnitTest
         public void WhenBabyMoreThenAdult()
         {
             steps.SelectPage();
+            steps.SelectOneSideFlight();
             steps.SelectFirstTrip(cityMinsk, cityTokio);
-            status = steps.selectPassengers();
+            status = steps.SelectPassengers();
             //if count of adults more or equal count if babies
             NUnit.Framework.Assert.AreEqual(true, status);
         }
@@ -95,6 +96,7 @@ namespace FrameworkUnitTest
         public void CheckSortOfSearchResult()
         {
             steps.SelectPage();
+            steps.SelectOneSideFlight();
             steps.SelectFirstTrip(cityLondon, cityTokio);
             steps.SelectFirstTripDate();
             status = steps.StartSearchTickets();
@@ -111,8 +113,9 @@ namespace FrameworkUnitTest
         public void WhenBabyWithoutAnyAdult()
         {
             steps.SelectPage();
+            steps.SelectOneSideFlight();
             steps.SelectFirstTrip(cityMinsk, cityMoscow);
-            status = steps.selectPassengersWithoutAdults();
+            status = steps.SelectPassengersWithoutAdults();
             //if count of babies equal count of adults
             NUnit.Framework.Assert.AreEqual(false, status);
         }
@@ -147,7 +150,7 @@ namespace FrameworkUnitTest
             steps.SelectFirstTrip(cityMinsk, cityMoscow);
             steps.SelectFirstTripDate();
             status = steps.StartSearchTickets();
-            System.Threading.Thread.Sleep(10000);
+           // System.Threading.Thread.Sleep(10000);
             status = steps.CheckConvertation(bestExchangeRate, worstExchangeRate);
             NUnit.Framework.Assert.AreEqual(true, status);
         }
@@ -157,25 +160,21 @@ namespace FrameworkUnitTest
         public void WhenBabyOlderThenAdult()
         {
             steps.SelectPage();
-          
+            steps.SelectOneSideFlight();
             steps.SelectFirstTrip(cityLondon, cityTokio);
             steps.SelectFirstTripDate();
             steps.PlusPassenerBaby();
 
             status = steps.StartSearchTickets();
-            System.Threading.Thread.Sleep(10000);
             steps.SelectTicket();
-            System.Threading.Thread.Sleep(10000);
             steps.InsertInfoIntoProfile(email, phone);
-            steps.insertNameAdult(adultFirstName, adultLastName);
-            steps.insertBDAdult(adultBDay, adultBMonth, adultBYear);
+            steps.InsertNameAdult(adultFirstName, adultLastName);
+            steps.InsertBDAdult(adultBDay, adultBMonth, adultBYear);
         //    steps.insertDocAdult(adultDoc, adultExDay, adultExMonth, adultExYear);
-        //    steps.ScrollProfilePAge();
-            steps.insertNameBaby(babyFirstName, babyLastName);
-            steps.insertBDBaby(babyBDay, babyBMonth, babyBYear);
+            steps.InsertNameBaby(babyFirstName, babyLastName);
+            steps.InsertBDBaby(babyBDay, babyBMonth, babyBYear);
          //   steps.insertDocBaby(babyDoc, babyExDay, babyExMonth, babyExYear);
-
-            status = steps.submitTicket();
+            status = steps.SubmitTicket();
             status = steps.ReturnBAbyAgeError();
             NUnit.Framework.Assert.AreEqual(true, status);
         }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
+
 namespace _10UnitTests
 {
     class MainPage
@@ -19,6 +21,9 @@ namespace _10UnitTests
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[1]/div/div/div[1]/div[1]/ul/li[2]/div/ins")]
         private IWebElement bothSides;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[1]/div/div/div[1]/div[1]/ul/li[1]/div/ins")]
+        private IWebElement oneSide;
         #endregion
 
         #region Passengers
@@ -100,9 +105,14 @@ namespace _10UnitTests
 
         public void SelectComplexFlight()
         {
-
             complexFlight.Click();
         }
+
+        public void SelectOneSideFlight()
+        {
+            oneSide.Click();
+        }
+
         public void ClickOnSearchTickets()
         {
             searchButton.Click();
@@ -164,11 +174,13 @@ namespace _10UnitTests
 
         public void SelectPassengerBaby()
         {
-            System.Threading.Thread.Sleep(1000);
+               //System.Threading.Thread.Sleep(1000);
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"page\"]/div[1]/div/div/div[1]/div[2]/form/div[2]/div/div[2]/div[1]/div[2]/div/dl/dd[3]/ul/li[3]/span")));
             passengerBaby.Click();
         }
            
-        public string getCountBaby()
+        public string GetCountBaby()
         {
             string count = countBaby.GetAttribute("value");
             return count;
@@ -179,7 +191,7 @@ namespace _10UnitTests
             bothSides.Click();
         }
 
-        public string getCountAdult()
+        public string GetCountAdult()
         {
             string count = countAdult.GetAttribute("value");
             return count;

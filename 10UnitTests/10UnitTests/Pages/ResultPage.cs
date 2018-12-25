@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace _10UnitTests
 {
@@ -42,8 +43,10 @@ namespace _10UnitTests
         {
             this.driver = driver;
             PageFactory.InitElements(this.driver, this);
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"content\"]/div/div[1]/div[4]/ul/li[3]/a")));
         }
-        public string getCostBYN()
+        public string GetCostBYN()
         {
           return CostBYN.Text.ToString();
         }
@@ -62,17 +65,17 @@ namespace _10UnitTests
             sortByTime.Click();
         }
 
-        public string getFirstTime()
+        public string GetFirstTime()
         {
-            return firstFlightTime.Text.ToString();
+          return firstFlightTime.Text.ToString();
         }
 
-        public string getSecondTime()
+        public string GetSecondTime()
         {
             return secondFlightTime.Text.ToString();
         }
 
-        public string getThirdTime()
+        public string GetThirdTime()
         {
             return thirdFlightTime.Text.ToString();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Threading;
-
+using OpenQA.Selenium.Support.UI;
 
 namespace _10UnitTests
 {
@@ -102,6 +102,8 @@ namespace _10UnitTests
         {
             this.driver = driver;
             PageFactory.InitElements(this.driver, this);
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[1]/main/div/form/section/div/div[4]/div/input")));
         }
 
         public void InsertNameAdult(string firstName, string lastName)
@@ -197,6 +199,8 @@ namespace _10UnitTests
         public bool CheckErrorMessage()
         {
             string message;
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[1]/main/div/form/section/div/div[3]/div[3]/div[2]/div[3]/div/samp")));
             try
             {
             message = BabyAgeErrorMessage.Text;
