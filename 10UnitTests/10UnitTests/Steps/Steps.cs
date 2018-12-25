@@ -254,7 +254,6 @@ namespace _10UnitTests
         public bool ReturnBAbyAgeError()
         {
          _10UnitTests.PassengerProfile selectPage = new _10UnitTests.PassengerProfile(driver);
-     //       System.Threading.Thread.Sleep(10000);
             return   selectPage.CheckErrorMessage();
         }
         public bool CheckErrorMessage()

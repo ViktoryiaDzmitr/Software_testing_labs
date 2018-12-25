@@ -123,9 +123,7 @@ namespace _10UnitTests
             departureName_first.Clear();
             destinationName_first.Clear();
             departureName_first.SendKeys(departure);
-          //  departureName_first.SendKeys(OpenQA.Selenium.Keys.Enter);
             destinationName_first.SendKeys(destination);
-          //  destinationName_first.SendKeys(OpenQA.Selenium.Keys.Enter);
         }
 
         public void InsertSecondTrip(string departure, string destination)
@@ -133,9 +131,7 @@ namespace _10UnitTests
             departureName_second.Clear();
             destinationName_second.Clear();
             departureName_second.SendKeys(departure);
-       //     departureName_second.SendKeys(OpenQA.Selenium.Keys.Enter);
             destinationName_second.SendKeys(destination);
-        //    destinationName_second.SendKeys(OpenQA.Selenium.Keys.Enter);
         }
 
 
@@ -162,19 +158,16 @@ namespace _10UnitTests
         }
         public void SelectPassengerAdult()
         {
-         //   System.Threading.Thread.Sleep(1000);
             passengerAdult.Click();
         }
 
         public void SelectPassengerChild()
         {
-          //  System.Threading.Thread.Sleep(1000);
             passengerChild.Click();
         }
 
         public void SelectPassengerBaby()
         {
-               //System.Threading.Thread.Sleep(1000);
             IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"page\"]/div[1]/div/div/div[1]/div[2]/form/div[2]/div/div[2]/div[1]/div[2]/div/dl/dd[3]/ul/li[3]/span")));
             passengerBaby.Click();
