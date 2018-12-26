@@ -138,19 +138,23 @@ namespace _10UnitTests
 
         public void ChooseFirstTripDate()
         {
-          //  System.Threading.Thread.Sleep(1000);
-            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            System.Threading.Thread.Sleep(1000);
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementIsVisible(By.Id("departure_date")));
             departureDate_first.Click();
-           // System.Threading.Thread.Sleep(1000);
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//html/body/div[7]/div[1]/table/tbody/tr[6]/td[1]/a")));
+            System.Threading.Thread.Sleep(1000);
             calendar_datefirst.Click();
         }
 
         public void ChooseSecondTripDate()
         {
-            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+          // System.Threading.Thread.Sleep(1000);
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementIsVisible(By.Id("departure_date1")));
             departureDate_second.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[7]/div[2]/table/tbody/tr[5]/td[4]/a")));
+          //  System.Threading.Thread.Sleep(1000);
             calendar_datesecond.Click();
         }
         
@@ -170,7 +174,7 @@ namespace _10UnitTests
 
         public void SelectPassengerBaby()
         {
-            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"page\"]/div[1]/div/div/div[1]/div[2]/form/div[2]/div/div[2]/div[1]/div[2]/div/dl/dd[3]/ul/li[3]/span")));
             passengerBaby.Click();
         }
