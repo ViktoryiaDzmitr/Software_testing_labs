@@ -16,8 +16,8 @@ namespace FrameworkUnitTest
         private const string cityLondon = "Лондон";
         private const string cityTokio = "Токио";
         private bool status = false;
-        private const double worstExchangeRate = 2.1020;
-        private const double bestExchangeRate = 2.1220;
+        private const double worstExchangeRate = 2.133;
+        private const double bestExchangeRate = 2.152;
 
         private const string email = "example@mail.ru";
         private const string phone = "291231212";
@@ -55,7 +55,7 @@ namespace FrameworkUnitTest
         }
         // Test #1
         [Test]
-        public void WhenDestinationEqualDeparture()
+        public void WhenNotEqualComplexFlight()
         {
             steps.SelectPage();
             steps.SelectComplexFlight();
@@ -100,7 +100,7 @@ namespace FrameworkUnitTest
             steps.SelectFirstTrip(cityLondon, cityTokio);
             steps.SelectFirstTripDate();
             status = steps.StartSearchTickets();
-            System.Threading.Thread.Sleep(15000);
+            System.Threading.Thread.Sleep(20000);
             steps.SelectSortByTime();
             System.Threading.Thread.Sleep(15000);
             status = steps.CheckSortByTime();
@@ -150,7 +150,6 @@ namespace FrameworkUnitTest
             steps.SelectFirstTrip(cityMinsk, cityMoscow);
             steps.SelectFirstTripDate();
             status = steps.StartSearchTickets();
-           // System.Threading.Thread.Sleep(10000);
             status = steps.CheckConvertation(bestExchangeRate, worstExchangeRate);
             NUnit.Framework.Assert.AreEqual(true, status);
         }

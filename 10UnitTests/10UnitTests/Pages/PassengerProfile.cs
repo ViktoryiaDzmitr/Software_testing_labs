@@ -151,7 +151,7 @@ namespace _10UnitTests
 
         public void InsertDocBaby(string num, string exDay, string exMonth, string exYear)
         {
-            System.Threading.Thread.Sleep(1000);
+           // System.Threading.Thread.Sleep(1000);
             BabyDocument.Clear();
             BabyExpireDay.Clear();
             BabyExpireMonth.Clear();
@@ -165,7 +165,7 @@ namespace _10UnitTests
 
         public void InsertDocAdult(string num, string exDay, string exMonth, string exYear)
         {
-            System.Threading.Thread.Sleep(1000);
+           // System.Threading.Thread.Sleep(1000);
             AdultDocument.Clear();
             AdultExpireDay.Clear();
             AdultExpireMonth.Clear();

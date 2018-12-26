@@ -138,17 +138,19 @@ namespace _10UnitTests
 
         public void ChooseFirstTripDate()
         {
-            System.Threading.Thread.Sleep(1000);
+          //  System.Threading.Thread.Sleep(1000);
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("departure_date")));
             departureDate_first.Click();
-            System.Threading.Thread.Sleep(1000);
+           // System.Threading.Thread.Sleep(1000);
             calendar_datefirst.Click();
         }
 
         public void ChooseSecondTripDate()
         {
-            System.Threading.Thread.Sleep(1000);
+            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("departure_date1")));
             departureDate_second.Click();
-            System.Threading.Thread.Sleep(1000);
             calendar_datesecond.Click();
         }
         
