@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using NUnit.Framework;
 
 namespace LabPageFactory
 {
@@ -14,6 +15,7 @@ namespace LabPageFactory
 
         static void Main(string[] args)
         {
+            bool passTest = false;
             browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             browser.Manage().Window.Maximize();
             browser.Navigate().GoToUrl("http://avia.321.by/");
@@ -41,9 +43,11 @@ namespace LabPageFactory
             }
             catch 
 			{
+                passTest = true;
                 Console.WriteLine("Input Error.");
             }
             pageObject.SearchButton.Click();
+            Assert.AreEqual(true, passTest);
         }
     }
 }

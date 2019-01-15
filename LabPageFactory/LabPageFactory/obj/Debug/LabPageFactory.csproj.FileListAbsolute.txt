@@ -4,3 +4,9 @@ D:\Visual Projects\LabPageFactory\LabPageFactory\bin\Debug\LabPageFactory.pdb
 D:\Visual Projects\LabPageFactory\LabPageFactory\obj\Debug\LabPageFactory.csprojResolveAssemblyReference.cache
 D:\Visual Projects\LabPageFactory\LabPageFactory\obj\Debug\LabPageFactory.exe
 D:\Visual Projects\LabPageFactory\LabPageFactory\obj\Debug\LabPageFactory.pdb
+D:\Study\Testing\git\LabPageFactory\LabPageFactory\bin\Debug\LabPageFactory.exe.config
+D:\Study\Testing\git\LabPageFactory\LabPageFactory\obj\Debug\LabPageFactory.exe
+D:\Study\Testing\git\LabPageFactory\LabPageFactory\obj\Debug\LabPageFactory.pdb
+D:\Study\Testing\git\LabPageFactory\LabPageFactory\bin\Debug\LabPageFactory.exe
+D:\Study\Testing\git\LabPageFactory\LabPageFactory\bin\Debug\LabPageFactory.pdb
+D:\Study\Testing\git\LabPageFactory\LabPageFactory\obj\Debug\LabPageFactory.csprojResolveAssemblyReference.cache

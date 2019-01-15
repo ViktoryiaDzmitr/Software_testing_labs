@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using NUnit.Framework;
 
 namespace TestWebDriver
 {
@@ -11,6 +12,7 @@ namespace TestWebDriver
     {
         static void Main(string[] args)
         {
+            bool passTest = false;
             IWebDriver Browser;
             Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             Browser.Manage().Window.Maximize();
@@ -29,7 +31,7 @@ namespace TestWebDriver
 
             IWebElement DepatrureDate_first = Browser.FindElement(By.Id("departure_date"));
             DepatrureDate_first.Click();
-            IWebElement Calendar_datefirst = Browser.FindElement(By.ClassName("date_1541970000000"));
+            IWebElement Calendar_datefirst = Browser.FindElement(By.ClassName("date_1548882000000"));
             System.Threading.Thread.Sleep(1000);
             Calendar_datefirst.Click();
 
@@ -37,16 +39,18 @@ namespace TestWebDriver
             DepatrureDate_second.Click();
             try
             {
-                IWebElement Calendar_datesecond = Browser.FindElement(By.ClassName("date_1541710800000"));
+                IWebElement Calendar_datesecond = Browser.FindElement(By.ClassName("date_1548795600000"));
                 System.Threading.Thread.Sleep(1000);
                 Calendar_datesecond.Click();
             }
             catch
             {
                 Console.WriteLine("Second date is earlear then first. Input Error.");
+                passTest = true;
             }
             IWebElement SearchButton = Browser.FindElement(By.ClassName("search_button"));
             SearchButton.Click();
+            Assert.AreEqual(true,passTest);
         }
     }
 }

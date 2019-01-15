@@ -24,13 +24,13 @@ namespace LabPageFactory
         [FindsBy(How = How.Id, Using = "departure_date")]
         public IWebElement DepartureDate_first;
 
-        [FindsBy(How = How.ClassName, Using = "date_1541970000000")]
+        [FindsBy(How = How.ClassName, Using = "date_1548882000000")]
         public IWebElement Calendar_datefirst;
 
         [FindsBy(How = How.Id, Using = "departure_date_")]
         public IWebElement DepartureDate_second;
 
-        [FindsBy(How = How.ClassName, Using = "date_1541710800000")]
+        [FindsBy(How = How.ClassName, Using = "date_1548795600000")]
         public IWebElement Calendar_datesecond;
 
         [FindsBy(How = How.ClassName, Using = "search_button")]
