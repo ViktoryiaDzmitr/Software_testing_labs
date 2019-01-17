@@ -22,7 +22,7 @@ namespace TestWebDriver
             IWebElement InputFrom = Browser.FindElement(By.Id("from_name"));
             InputFrom.Clear();
             InputFrom.SendKeys("Лондон");
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(1100);
          //   InputFrom.SendKeys(OpenQA.Selenium.Keys.Enter);
 
             IWebElement InputTo = Browser.FindElement(By.Id("to_name"));

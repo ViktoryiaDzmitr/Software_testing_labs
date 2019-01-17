@@ -9,5 +9,8 @@ D:\Study\Testing\git\TestWebDriver\TestWebDriver\obj\Debug\TestWebDriver.exe
 D:\Study\Testing\git\TestWebDriver\TestWebDriver\obj\Debug\TestWebDriver.pdb
 D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\TestWebDriver.exe
 D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\TestWebDriver.pdb
-D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver_Support.dll
 D:\Study\Testing\git\TestWebDriver\TestWebDriver\obj\Debug\TestWebDriver.csprojResolveAssemblyReference.cache
+D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.dll
+D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.Support.dll
+D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.xml
+D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.Support.xml

@@ -47,7 +47,7 @@ namespace LabPageFactory
                 Console.WriteLine("Input City Error.");
             }
             pageObject.SearchButton.Click();
-
+            System.Threading.Thread.Sleep(5000);
             try
             {
                 passTest = pageObject.WarningWindow.Displayed;
