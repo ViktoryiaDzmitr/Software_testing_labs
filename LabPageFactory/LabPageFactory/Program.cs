@@ -44,10 +44,19 @@ namespace LabPageFactory
             catch 
 			{
                 passTest = true;
-                Console.WriteLine("Input Error.");
+                Console.WriteLine("Input City Error.");
             }
             pageObject.SearchButton.Click();
-            Assert.AreEqual(true, passTest);
+
+            try
+            {
+                passTest = pageObject.WarningWindow.Displayed;
+                Assert.AreEqual(true, passTest);
+            }
+            catch
+            {
+                Console.WriteLine("Test did't pass.");
+            }
         }
     }
 }

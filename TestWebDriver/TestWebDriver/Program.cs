@@ -13,6 +13,7 @@ namespace TestWebDriver
         static void Main(string[] args)
         {
             bool passTest = false;
+            bool isSelected = false;
             IWebDriver Browser;
             Browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             Browser.Manage().Window.Maximize();
@@ -22,7 +23,7 @@ namespace TestWebDriver
             InputFrom.Clear();
             InputFrom.SendKeys("Лондон");
             System.Threading.Thread.Sleep(1000);
-            InputFrom.SendKeys(OpenQA.Selenium.Keys.Enter);
+         //   InputFrom.SendKeys(OpenQA.Selenium.Keys.Enter);
 
             IWebElement InputTo = Browser.FindElement(By.Id("to_name"));
             InputTo.SendKeys("Минск");
@@ -42,15 +43,23 @@ namespace TestWebDriver
                 IWebElement Calendar_datesecond = Browser.FindElement(By.ClassName("date_1548795600000"));
                 System.Threading.Thread.Sleep(1000);
                 Calendar_datesecond.Click();
+                isSelected = Calendar_datesecond.Selected;
             }
             catch
             {
                 Console.WriteLine("Second date is earlear then first. Input Error.");
                 passTest = true;
             }
-            IWebElement SearchButton = Browser.FindElement(By.ClassName("search_button"));
-            SearchButton.Click();
-            Assert.AreEqual(true,passTest);
+            if (!isSelected)
+                passTest = true;
+            try
+            {
+                Assert.AreEqual(true, passTest);
+            }
+            catch
+            {
+                Console.WriteLine("Test did't pass!");
+            }
         }
     }
 }

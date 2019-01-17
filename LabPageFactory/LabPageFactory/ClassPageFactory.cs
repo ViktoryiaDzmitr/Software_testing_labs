@@ -35,5 +35,8 @@ namespace LabPageFactory
 
         [FindsBy(How = How.ClassName, Using = "search_button")]
         public IWebElement SearchButton;
+
+        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div[1]")]
+        public IWebElement WarningWindow;
     }
 }
