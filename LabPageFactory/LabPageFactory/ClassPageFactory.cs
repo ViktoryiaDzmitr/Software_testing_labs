@@ -10,9 +10,11 @@ namespace LabPageFactory
 {
     class ClassPageFactory
     {
-        public ClassPageFactory()
+        private IWebDriver browser;
+        public ClassPageFactory( IWebDriver browser)
         {
-            PageFactory.InitElements(Program.browser, this);
+            this.browser = browser;
+            PageFactory.InitElements(browser, this);
         }
 
         [FindsBy(How = How.Id, Using = "from_name")]

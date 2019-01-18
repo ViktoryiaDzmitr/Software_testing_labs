@@ -5,13 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using NUnit.Framework;
+using OpenQA.Selenium.Support.UI;
 
 namespace TestWebDriver
 {
+    [TestFixture]
     class Program
     {
-        static void Main(string[] args)
+        [Test]
+        public void WhenSecondDateEarlierFirst()
         {
+
             bool passTest = false;
             bool isSelected = false;
             IWebDriver Browser;
@@ -23,7 +27,7 @@ namespace TestWebDriver
             InputFrom.Clear();
             InputFrom.SendKeys("Лондон");
             System.Threading.Thread.Sleep(1100);
-         //   InputFrom.SendKeys(OpenQA.Selenium.Keys.Enter);
+            //   InputFrom.SendKeys(OpenQA.Selenium.Keys.Enter);
 
             IWebElement InputTo = Browser.FindElement(By.Id("to_name"));
             InputTo.SendKeys("Минск");
@@ -52,14 +56,14 @@ namespace TestWebDriver
             }
             if (!isSelected)
                 passTest = true;
-            try
-            {
-                Assert.AreEqual(true, passTest);
-            }
-            catch
-            {
-                Console.WriteLine("Test did't pass!");
-            }
+
+            Assert.IsTrue(passTest);
+
+        }
+
+        public static void Main(string[] args)
+        {
+   
         }
     }
 }

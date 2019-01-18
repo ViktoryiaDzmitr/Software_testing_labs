@@ -9,17 +9,19 @@ using NUnit.Framework;
 
 namespace LabPageFactory
 {
+    [TestFixture]
     class Program
-    {
-        public static IWebDriver browser;
-
-        static void Main(string[] args)
+    {   
+       [Test]
+       public void WhenDepartureEqualDestination()
         {
+
+            IWebDriver browser;
             bool passTest = false;
             browser = new OpenQA.Selenium.Chrome.ChromeDriver();
             browser.Manage().Window.Maximize();
             browser.Navigate().GoToUrl("http://avia.321.by/");
-            ClassPageFactory pageObject = new ClassPageFactory();
+            ClassPageFactory pageObject = new ClassPageFactory(browser);
 
             pageObject.Place_from.Clear();
             pageObject.Place_from.SendKeys("Минск");
@@ -41,22 +43,25 @@ namespace LabPageFactory
                 System.Threading.Thread.Sleep(1000);
                 pageObject.Calendar_datesecond.Click();
             }
-            catch 
-			{
+            catch
+            {
                 passTest = true;
                 Console.WriteLine("Input City Error.");
             }
             pageObject.SearchButton.Click();
             System.Threading.Thread.Sleep(5000);
-            try
-            {
-                passTest = pageObject.WarningWindow.Displayed;
-                Assert.AreEqual(true, passTest);
-            }
-            catch
-            {
-                Console.WriteLine("Test did't pass.");
-            }
+
+            passTest = pageObject.WarningWindow.Displayed;
+            Assert.IsTrue(passTest);
+
+
+        }
+
+   
+        
+            static void Main(string[] args)
+            {   
+            
         }
     }
 }
