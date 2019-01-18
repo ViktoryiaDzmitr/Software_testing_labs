@@ -15,7 +15,6 @@ namespace TestWebDriver
         [Test]
         public void WhenSecondDateEarlierFirst()
         {
-
             bool passTest = false;
             bool isSelected = false;
             IWebDriver Browser;
@@ -42,28 +41,23 @@ namespace TestWebDriver
 
             IWebElement DepatrureDate_second = Browser.FindElement(By.Id("departure_date_1"));
             DepatrureDate_second.Click();
-            try
-            {
-                IWebElement Calendar_datesecond = Browser.FindElement(By.ClassName("date_1548795600000"));
-                System.Threading.Thread.Sleep(1000);
-                Calendar_datesecond.Click();
-                isSelected = Calendar_datesecond.Selected;
-            }
-            catch
-            {
-                Console.WriteLine("Second date is earlear then first. Input Error.");
-                passTest = true;
-            }
+  
+            IWebElement Calendar_datesecond = Browser.FindElement(By.ClassName("date_1548795600000"));
+            System.Threading.Thread.Sleep(1000);
+            Calendar_datesecond.Click();
+            isSelected = Calendar_datesecond.Selected;
+            
             if (!isSelected)
+            {
                 passTest = true;
+            }
 
-            Assert.IsTrue(passTest);
-
+            Assert.IsTrue(passTest, "Second date is earlear then first. Input Error.");
         }
 
         public static void Main(string[] args)
         {
-   
+
         }
     }
 }

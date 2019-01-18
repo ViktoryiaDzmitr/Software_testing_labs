@@ -13,3 +13,4 @@ D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.dll
 D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.Support.dll
 D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.xml
 D:\Study\Testing\git\TestWebDriver\TestWebDriver\bin\Debug\WebDriver.Support.xml
+D:\Study\Testing\git\TestWebDriver\TestWebDriver\obj\Debug\TestWebDriver.csprojResolveAssemblyReference.cache

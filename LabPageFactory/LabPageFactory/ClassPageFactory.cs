@@ -29,7 +29,7 @@ namespace LabPageFactory
         [FindsBy(How = How.ClassName, Using = "date_1548882000000")]
         public IWebElement Calendar_datefirst;
 
-        [FindsBy(How = How.Id, Using = "departure_date_")]
+        [FindsBy(How = How.Id, Using = "departure_date_1")]
         public IWebElement DepartureDate_second;
 
         [FindsBy(How = How.ClassName, Using = "date_1548795600000")]

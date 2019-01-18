@@ -13,3 +13,4 @@ D:\Study\Testing\git\LabPageFactory\LabPageFactory\bin\Debug\WebDriver.dll
 D:\Study\Testing\git\LabPageFactory\LabPageFactory\bin\Debug\WebDriver.Support.dll
 D:\Study\Testing\git\LabPageFactory\LabPageFactory\bin\Debug\WebDriver.xml
 D:\Study\Testing\git\LabPageFactory\LabPageFactory\bin\Debug\WebDriver.Support.xml
+D:\Study\Testing\git\LabPageFactory\LabPageFactory\obj\Debug\LabPageFactory.csprojResolveAssemblyReference.cache
